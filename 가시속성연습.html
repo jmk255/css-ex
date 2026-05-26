@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가시속성</title>
+  <style>
+    .hidden{
+      visibility:hidden;
+    }
+    .box{
+      display:none;
+    }
+
+    .overlay {
+      line-height: 4;
+      text-align: center;
+      background-color:rgba(0,0,0,0.5);/*rgba로 배경색만 투명도를 조절할수 있다*/
+      background-color:#00000088;/*마지막 2자리숫자로 투명도를 조절할수 있다*/
+    }
+    .text{
+      opacity:0.75;/*텍스트의 투명도를 조절*/
+    }
+
+    section{
+      font-size:5rem;
+    }
+    a+div{/*a요소의 다음형제인 div요소를 화면에서 제거*/
+      display:none;
+    }
+    a:hover+div{/*a요소에 마우스를 올리면 다음형제인 div요소를 선택 display값을 block으로 설정하여 화면에 표시*/
+      display:block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <p class="text">이 텍스트는 보입니다.</p>
+    <p class="hidden">이 텍스트는 숨겨져야 합니다.</p>
+  </div>
+  <div class="box">이 박스는 보입니다.</div>
+  <div class="overlay">
+    <p class="text">이 텍스트는 배경 위에 있습니다.</p>
+  </div>
+
+  <section>
+    <a href="#">버튼</a>
+    <div>안녕</div>
+    <div>잘가</div>
+  </section>
+</body>
+
+</html>

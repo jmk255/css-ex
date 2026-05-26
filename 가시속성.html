@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가시속성</title>
+  <style>
+    .container1 > span{
+      display:none;/*객체가 화면에서 사라짐*/
+      display:inline;/*width, height속성을 적용할 수 없다*/
+      width:300px;
+      height:50px;
+      background-color:orange;
+    }
+    #box1{
+      display:inline-block;/*width,height속성을 적용할 수 있다*/
+    }
+    #box2{
+      display:block;
+    }
+
+    /*visibility : hidden을 적용하면 객체는 화면에서 사라지나 display:none과는 다르게 단지 시야에서만 보이지 않게 됩니다*/
+    .container2 .box{
+      width:200px;
+      height:100px;
+      background-color:lightcoral;
+      margin:10px;
+    }
+    /*
+    opacity속성 : 투명도를 설정할수 있게합니다
+    속성값은 0.0(투명) ~ 1.0(불투명)사이 소수점값을 사용합니다
+    */
+    .visible{
+      visibility:visible;/*기본값(default)*/
+      opacity:0.5;
+    }
+    .hidden{
+      visibility:hidden;/*투명하게 변경*/
+    }
+  </style>
+</head>
+<body>
+  <!--
+  display : 화면상에 어떻게 보일지를 결정
+
+  1. block : block값이 적용된 객체는 초기 넓이 값이 100%이며 나란한 줄에 다른 객체가 오지 못하게 합니다.
+  2. inline : inline값이 적용된 객체는 넓이 값을 가질수 없는 속성값이며, 나란한 줄에 다른 inline요소가 위치할 수 있습니다
+  3. inline-block : 넓이 값을 사용할 수 있게하고 나란한 줄에 다른 객체를 오게하는 속성(block과 inline의 장점을 모았다)
+  4. none : 구성 객체가 화면에서 사라지게 합니다(제거)
+  -->
+  <div class="container1">
+    <span>display:inline</span>
+    <span id="box1">display:inline-block</span>
+    <span id="box2">display:block</span>
+  </div>
+
+  <div class="container2">
+    <div class="box hidden">hidden</div>
+    <div class="box visible">visible</div>
+  </div>
+</body>
+</html>

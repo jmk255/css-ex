@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>box-sizing속성</title>
+  <style>
+    /*공통 스타일*/
+    div{
+      width:200px;
+      margin:20px;
+      padding:20px;
+      border:20px solid black;
+      font-size:20px;
+    }
+    /*content-box*/
+    .content-box{
+      background-color:blue;
+      color:#fff;
+      box-sizing: content-box;/*기본값 = border와 padding이 width,height 바깥쪽으로 적용*/
+    }
+
+    /*border-box*/
+    .border-box{
+      background-color:red;
+      color:white;
+      box-sizing: border-box;
+      /*border와 padding이 width,height 안쪽으로 적용*/
+    }
+
+    .box{
+      background-color:orange;
+      border:5px solid red;
+      /*인라인 요소의 경우 상,하단의 여백이 적용되지 않는다.*/
+      margin-top:100px;
+      margin-left:50px;/*좌우 여백만 적용됨*/
+      /* padding-top:100px; padding도 적용할수 없음 */
+    }
+
+    .container{
+      width:300px;
+      height:200px;
+      border:1px solid red;
+      background-color:#ababab;
+      padding:0;
+    }
+    .box1{
+      margin:0;
+      padding:0;
+      width:100%;
+      border:10px solid blue;
+      background-color:skyblue;
+    }
+    .box2{
+      width:100%;
+      margin:0; padding:0;
+      border:10px solid red;
+      background-color:lightgreen;
+      box-sizing:border-box;
+      /*box-sizing을 border-box로 설정하면 width:100%에 border가 포함되어 결과적으로 width가 100% 이상 늘어나지 않는다*/
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box">content-box</div>
+  <div class="border-box">border-box</div>
+  <span class="box">인라인요소</span>
+
+  <div class="container">
+    <div class="box1">Box 1</div>
+    <div class="box2">Box 2</div>
+  </div>
+</body>
+</html>
