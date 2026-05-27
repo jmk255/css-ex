@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내비연습</title>
+  <style>
+    /*노말라이즈*/
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+    *{margin:0; padding:0;}
+    ul,li{list-style:none;}
+    a{text-decoration: none; color:#333;}
+    body{
+      font-family: "Noto Sans KR", "맑은 고딕", sans-serif;
+    }
+    /*클리어픽스핵*/
+    .clearfix::after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+    /*==================================*/
+    .navbar{
+      outline:1px solid red;
+      width:1280px;
+      margin:auto;
+      padding:0 45px;
+      box-sizing:border-box;/*width가 padding값만큼 늘어나지 않음*/
+    }
+    .navbar .logo{
+      float:left; /*왼쪽 정렬*/
+      margin:10px 0;
+    }
+    .navbar .gnb{
+      float:right; /*오른쪽 정렬*/
+      margin:18px 0;
+    }
+    .navbar .gnb li{
+      float:left; /*왼쪽에서 오른쪽 방향으로 정렬*/
+      margin-left:34px;
+    }
+    .navbar .gnb li a{
+      font-size:15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar clearfix">
+    <h1 class="logo"><a href="#">
+      <img src="img/img-logo.png" alt="logo">
+    </a></h1>
+    <ul class="gnb">
+      <li><a href="#">쿠킹 클래스</a></li>
+      <li><a href="#">소개</a></li>
+      <li><a href="#">로그인</a></li>
+      <li><a href="#"><img src="img/search.png" alt="search"></a></li>
+    </ul>
+  </nav>
+</body>
+
+</html>
