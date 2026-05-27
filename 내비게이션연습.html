@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내비게이션연습</title>
+  <style>
+    /*노멀라이즈*/
+    *{margin:0; padding:0;}
+    ul,li{
+      list-style:none;/*목록 스타일을 제거*/
+    }
+    a{
+      text-decoration: none;/*밑줄제거*/
+      color:inherit;/*부모요소에게 상속받음*/
+    }
+    /*============================*/
+    .gnb{/*넓이를 800px로 설정하고 가운데 정렬*/
+      width:800px;
+      margin:auto;
+    }
+    .gnb > li{
+      width:200px;
+      height:50px;
+      float:left;
+    }
+    .gnb > li > a{
+      display:block;
+      width:100%;
+      height:100%;
+      line-height:50px;
+      background-color:#999;
+      color:#fff;
+      text-align: center;
+      /* outline:1px solid red; 영역을 차지하지 않는 외곽선(보통 해당요소의 크기를 확인할때 많이 상요) */
+    }
+
+    /*하이라이트 효과*/
+    .gnb > li > a:hover{
+      background-color:aquamarine;
+      color:#333;
+    }
+
+    /*가상요소*/
+    .gnb::after{/*.gnb요소의 마지막 자손으로 가상요소가 생성*/
+      content:"";
+      display:block;
+      clear:both;/*클리어픽스핵*/
+    }
+  </style>
+</head>
+<body>
+  <ul class="gnb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">News</a></li>
+    <li><a href="#">Board</a></li>
+  </ul>
+  <main style="background-color:yellow; height:500px;"></main>
+</body>
+</html>
