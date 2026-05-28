@@ -6,22 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>내비게이션연습</title>
   <style>
-    *{margin:0; padding:0;}
+    *{margin:0; padding:0; box-sizing:border-box;}
     ul,li{list-style:none;}
-    a{text-decoration: none; color:#fff;}
+    a{
+      text-decoration: none; 
+      color:#fff;
+      user-select: none;/*폰트를 선택할 수 없게함*/
+    }
     body{
       font-family: "맑은 고딕", sans-serif;
     }
   
-    
-
+    .navbar{
+      min-width:1100px;/*최소값 설정*/
+      background-color:#333;
+    }
+    .navbar > .container{
+      width:1080px;
+      height:120px;
+      margin:auto;
+      padding:0 10px;
+      display:flex;
+      align-items: center;/*교차축 정렬*/
+      justify-content: space-between;/*주축 정렬*/
+    }
+    .gnb{
+      display:flex;
+      gap:60px;
+      align-items:center;
+    }
+    .gnb > li > a{
+      font-size:14px;
+      font-weight: bold;
+    }
   </style>
 </head>
 
 <body>
   <nav class="navbar">
     <div class="container">
-      
+      <ul class="gnb">
+        <li><a href="#">
+          <img src="img/img-logo-w.png" alt="logo">
+        </a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">NEWS</a></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><a href="#">BOARD</a></li>
+        <li><a href="#">ALBUM</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
+      <div class="search"><a href="#">
+        <img src="img/search-w.png" alt="search">
+      </a></div>
     </div>
   </nav>
 </body>

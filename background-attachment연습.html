@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background-attachment연습</title>
+  <style>
+    *{margin:0; padding:0;}
+    div{
+      width:100%;
+      height:400px;
+      background-position:center;
+      background-size:cover;
+      background-repeat: no-repeat;
+      font-size:18px;
+      color:#111;
+    }
+    .box1,
+    .box3{/*쉼표로 구분하여 동시선택*/
+      background-image:url(img/background-attachment_01.jpg);
+      background-attachment:fixed;/*배경이미지 고정*/
+    }
+    
+    .box5{
+      height:520px;
+      background-image:url(img/background-attachment_02.jpg);
+      background-attachment:fixed;/*배경이미지 고정*/
+    }
+    .box2,
+    .box4{
+      padding:120px 0;
+      box-sizing:border-box;
+    }
+    .box2 > h1,
+    .box4 > h1{
+      font-size:32px;
+      line-height:40px;
+      text-align: center;
+    }
+    .box2 > p{
+      text-align: center;
+      margin-top:24px;
+    }
+    .box4 > ul{
+      list-style:none;
+      width:800px;
+      margin:50px auto 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2">
+    <h1>BACKGROUND-ATTACHMENT</h1>
+    <p>이 속성은 배경이미지를 어떻게 고정할지를 정하는 속성입니다.</p>
+    <p>
+      스크롤 하여 내용을 볼 때 배경 이미지가 내용과 같이 움직일지,<br>
+      또는 배경 이미지는 고정되어 있을지 결정 할 수 있습니다. 
+    </p>
+  </div>
+  <div class="box3"></div>
+  <div class="box4">
+    <h1>사용 가능 속성</h1>
+    <ul>
+      <li><b>scroll :</b> 기본 값입니다. 요소에 고정되어 있습니다</li>
+      <li><b>local :</b> 요소 안 내용에 고정됩니다. 요소 안을 스크롤을 할 때, 이미지가 내부의 내용과 같이 움직입니다.</li>
+      <li><b>fixed :</b> background-position의 좌표를 뷰포트(웹 페이지 화면)를 기준으로 합니다.</li>
+    </ul>
+  </div>
+  <div class="box5"></div>
+</body>
+</html>

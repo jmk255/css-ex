@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>검색창만들기</title>
+  <style>
+    *{margin:0; padding:0;}
+
+    .bg{
+      width:100%;
+      min-width:1000px;
+      background:url(img/searchBackground.jpg) center/cover no-repeat;
+      padding:80px 0;
+      text-align: center;
+    }
+    .bg > form{
+      width:1000px;
+      margin:auto;
+    }
+    .bg h1{
+      font-size:28px;
+      color:#f1f1f1;
+      margin-bottom:40px;
+    }
+    /*속성선택자 = 대괄호안에 속성값을 입력하여 선택*/
+    input[type=text]{
+      width:800px;
+      height:40px;
+      border:none;
+      outline:none;
+      font-size:16px;
+      /*이미지경로, 배경색, 반복없음, 포지션/사이즈*/
+      background:url(img/search_b.png) #fff no-repeat 10px 10px/20px 20px;
+      text-indent:40px;/*들여쓰기*/
+    }
+  </style>
+</head>
+<body>
+  <div class="bg">
+    <form>
+      <h1>네트워크 통합검색</h1>
+      <input type="text">
+    </form>
+  </div>
+</body>
+</html>

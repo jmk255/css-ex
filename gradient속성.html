@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gradient속성</title>
+  <style>
+    .gradient1 {
+      font-family: "Times New Roman";
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      /*
+      각도 = deg
+      radial-gradient(각도, 색상 위치, 색상 위치,...)
+      linear-gradient(각도, 색상 위치, 색상 위치,...)
+      */
+      background: #28a1d1;
+      background: linear-gradient(90deg, rgba(40, 161, 209, 1) 0%, rgba(179, 191, 46, 1) 100%);
+    }
+
+    .gradient2 {
+      width: 300px;
+      height: 300px;
+      /*반복된 그라디언트 적용*/
+      background: repeating-linear-gradient(45deg, red, orange 50px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="gradient1">
+    <h1>CSS3 Gradient</h1>
+  </div>
+  <div class="gradient2"></div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>background속성 정리</title>
+  <style>
+    div{
+      width:100%;
+      height:400px;
+    }
+
+    /*단일 배경 이미지*/
+    .background-single{
+      color:#fff;
+      /*배경이미지*/
+      background-image:url(img/image1.jpg);
+      /*배경이미지 크기설정 : 넓이:100%, 높이:400px로 설정*/
+      background-size:100% 400px;
+      /*이미지가 요소를 완전히 채우도록 설정, 가로세로 비율을 유지*/
+      background-size:cover;
+      /*배경을 사용하는 요소를 벗어나지 않는 최대 크기로 이미지를 확대 또는 축소, 가로세로 비율을 유지*/
+      background-size:contain;
+      /*반복 배경 없음(repeat-x:x축으로만 반복, repeat-y:y축으로만 반복)*/
+      background-repeat:no-repeat;
+    }
+    /*배경이미지와 색상 혼합*/
+    .background-color-image{
+      background-color:rgba(0,0,0,0.5);/*반투명 검정*/
+      background-image:url(img/image1.jpg);
+      background-size:cover;
+      /*혼합 모드설정(blend mode)*/
+      background-blend-mode:multiply;
+    }
+    /*여러 배경 이미지*/
+    .background-multiple{
+      background-image:url(img/fire.jpg), url(img/image1.jpg);
+      background-repeat: no-repeat;/*반복배경없음*/
+      background-size:200px 100px, cover;/*각 이미지의 크기 조절*/
+      background-blend-mode: screen;/*이미지 혼합모드 설정*/
+      /*이미지의 위치 조절*/
+      background-position:top right, center;
+    }
+
+    .box{
+      background-color:#fe9;
+      background-repeat: no-repeat;
+      width:300px; height:80px;
+      margin-bottom:10px;
+    }
+    .one{
+      background-image:url(img/spot.png);
+      background-position:10px bottom;
+    }
+    .two{
+      /*축약형*/
+      background:url(img/spot.png) #fe9 3em 50% no-repeat;
+    }
+    .three{
+      /*여러 배경 이미지*/
+      background-image:url(img/spot.png), url(img/logo.png);
+      background-position:0px 0px, center;
+    }
+  </style>
+</head>
+<body>
+  <div class="background-single">TEXT</div>
+  <div class="background-color-image"></div>
+  <div class="background-multiple"></div>
+
+  <div class="box one">Example one</div>
+  <div class="box two">Example two</div>
+  <div class="box three">Example three</div>
+</body>
+</html>
