@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>overlay연습</title>
+  <style>
+    *{margin:0; padding:0;}
+    a{text-decoration: none;}
+    body{
+      font-family: Arial, sans-serif;
+      font-size:14px;
+      color:#f1f1f1;
+      line-height:1.5;
+    }
+
+    .container{
+      width:1060px;
+      margin:auto;
+      padding:0 10px;
+      display:flex;
+      justify-content: space-between;/*주축 정렬*/
+      align-items: center;
+    }
+    .container > .box{
+      outline:1px solid red;
+      width:250px;
+      height:240px;
+      position:relative;/*pos:abs를 적용한 자식요소의 기준이됨*/
+    }
+    .box > .overlay{
+      background-color:rgba(0,0,0,0.8);
+      position:absolute;
+      inset:0;/*position속성을 적용한 부모요소와 같은 크기로 같은 위치에 겹쳐놓음*/
+      padding:30px 20px;
+      /*화면에서 가려줍니다*/
+      opacity:0;
+      visibility: hidden;
+      /*변환 효과적용(애니메이션)*/
+      transition: 0.3s;
+    }
+    .overlay > h2{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+    .overlay > p{
+      margin-bottom:20px;
+    }
+    .icon > a{
+      margin-right:5px;
+    }
+
+    /*box요소에 마우스를 올리면 overlay가 나타남*/
+    .box:hover > .overlay{
+      opacity:1;
+      visibility:visible;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <article class="box">
+      <img src="image/img1.png" alt="">
+      <div class="overlay">
+        <h2>Segment Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, illo!</p>
+        <div class="icon">
+          <a href="#"><img src="image/facebook.png" alt=""></a>
+          <a href="#"><img src="image/instagram.png" alt=""></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <img src="image/img2.png" alt="">
+      <div class="overlay">
+        <h2>Segment Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, illo!</p>
+        <div class="icon">
+          <a href="#"><img src="image/facebook.png" alt=""></a>
+          <a href="#"><img src="image/instagram.png" alt=""></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <img src="image/img3.png" alt="">
+      <div class="overlay">
+        <h2>Segment Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, illo!</p>
+        <div class="icon">
+          <a href="#"><img src="image/facebook.png" alt=""></a>
+          <a href="#"><img src="image/instagram.png" alt=""></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <img src="image/img4.png" alt="">
+      <div class="overlay">
+        <h2>Segment Title</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, illo!</p>
+        <div class="icon">
+          <a href="#"><img src="image/facebook.png" alt=""></a>
+          <a href="#"><img src="image/instagram.png" alt=""></a>
+        </div>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

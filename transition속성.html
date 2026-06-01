@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>transition속성</title>
+  <style>
+    div{
+      width:100%;/*width의 기본값을 설정해줘야 애니메이션이 적용된다*/
+      height:100px;
+      background-color:#afafaf;
+      opacity: .3;
+      /*변환효과, 배경색이 변경되면 0.5초에 걸쳐서 서서히 변경됨*/
+      transition:background-color 0.5s;
+    }
+    div:hover{
+      /*배경색을 2초에 걸쳐 변경*/
+      transition:background-color 2s;
+      background-color:gold;
+      /*width가 100%에서 50% 크기로 변경*/
+      transition:background-color 2s, width 2s;
+      width:50%;
+      /*opacity에 transition적용*/
+      transition:background-color 2s, width 2s, opacity 2s;
+      opacity:1;
+      /*all = 모든 속성에 transition적용*/
+      transition: all 2s;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+  <hr>
+  <div></div>
+</body>
+</html>

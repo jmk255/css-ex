@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fade in overlay</title>
+  <style>
+    .container{
+      width:50%;
+      margin:auto;
+      border:1px solid black;
+      position:relative;
+    }
+    .container > img{
+      display:block;
+      width:100%;
+    }
+    .overlay{
+      background-color:rgba(0,0,0,0.8);
+      position:absolute;
+      /*부모 요소와 같은 크기로 겹쳐서 정렬*/
+      /* left:0; right:0; top:0; bottom:0; */
+      inset:0;
+      /*자식요소 가운데 정렬*/
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      /*화면에 안보이게 설정*/
+      opacity:0;
+      visibility:hidden;
+    }
+    .overlay > p{
+      color:#fff;
+      font-size:60px;
+      cursor:default;/*커서 모양 설정*/
+    }
+
+    /*container에 마우스를 올리면 overlay요소가 나타남*/
+    .container:hover > .overlay{
+      opacity:1;
+      visibility:visible;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="image/user.jpg" alt="user" class="user">
+    <div class="overlay">
+      <p>Hello!</p>
+    </div>
+  </div>
+</body>
+</html>
