@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position속성</title>
+  <style>
+    /*position속성 = 위치속성*/
+    .parent{
+      width:100%;
+      background-color:#ccc;
+      position:relative;/*pos:abs를 적용한 자식&후손요소의 기준이 됨*/
+    }
+    .parent>.child{
+      width:200px;
+      height:200px;
+      background-color:orange;
+      position:static;/*초기값 = 블럭요소가 기본적으로 가지고 있는 포지션 값*/
+    }
+    .parent>.ch1{
+      background-color:#fc0;
+      position:relative;
+      /*pos:rel적용하면 상대적인 위치값(요소의 위치를 기준)으로 위치가 정렬된다*/
+      top:100px; left:100px;
+      z-index:100;/*도형의 위아래 순서 변경시 사용*/
+    }
+    .parent>.ch2{
+      background-color:#f70;
+      position:absolute;
+      /*pos:abs적용하면 position속성을 적용한 부모 또는 조상요소를 기준으로 정렬 이때 부모 또는 조상요소에 position값이 없을경우 브라우저 기준으로 정렬된다.*/
+      bottom:100px; right:100px;
+    }
+    .parent>.ch3{
+      background-color:#f00;
+      position:absolute;
+      bottom:50px; left:50px;
+      z-index: 99;
+    }
+    /*
+    좌표속성
+    left:좌측 기준
+    top:상단 기준
+    right:우측 기준
+    bottom:하단 기준
+    */
+  </style>
+</head>
+<body>
+  <div class="parent">
+    <div class="child ch1">BOX1</div>
+    <div class="child ch2">BOX2</div>
+    <div class="child ch3">BOX3</div>
+  </div>
+</body>
+</html>
