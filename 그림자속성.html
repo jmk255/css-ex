@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그림자 속성</title>
+  <style>
+    /*
+    text-shadow : 글자에 그림자를 부여하는 속성
+    box-shadow : 태그(요소)에 그림자를 부여하는 속성
+    */
+    div{
+      /*text-shadow:오른쪽 아래 흐림도 확장값(그림자두께) 색상*/
+      border:3px solid black;
+      text-align: center;
+      color:#fff;
+      text-shadow:5px 5px 5px black;/*확장값은 생략가능*/
+      /*inset : 그림자를 프레임 안쪽으로 표현*/
+      box-shadow:inset 10px 10px 30px black;
+      /*중첩 그림자*/
+      text-shadow:5px 5px 5px orange, 10px 10px 10px red, 15px 15px 15px blue;
+    }
+    button{
+      border:none;
+      padding:15px 25px;
+      font-size:24px;
+      color:#fff;
+      background-color:#4caf50;
+      border-radius: 15px;/*모서리 둥글게*/
+      box-shadow:0 9px 0 #2e6f31;
+      cursor:pointer;/*버튼 모양을 포인터로 변경*/
+    }
+    button:hover{/*버튼에 마우스를 올리면 적용*/
+      background-color:#3e8e41;
+    }
+    button:active{/*버튼을 눌렀을때 적용*/
+      box-shadow:0 5px #2e6f31;
+      transform:translateY(4px);/*밑으로 4px만큼 이동*/
+    }
+  </style>
+</head>
+<body>
+  <div><h1>웹영상편집</h1></div>
+  <br>
+  <button type="button">Click</button>
+</body>
+</html>

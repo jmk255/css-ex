@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃연습1</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    a{text-decoration: none; color:#666;}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:14px;
+      color:#666;
+      line-height:1.4;
+    }
+
+    #container{
+      width:1080px;
+      margin:auto;
+      padding:0 10px;
+      display:flex;
+      flex-wrap:wrap;/*줄바꿈 허용*/
+      /*row-gap, column-gap*/
+      gap:40px 20px;/*세로간격 가로간격*/
+    }
+    .box{
+      /* outline:1px solid red; */
+      width:520px;
+      display:flex;
+      gap:20px;
+    }
+    .pic > img{display:block;}/*여백 제거*/
+    .txt > h2{
+      font-size:24px;
+      line-height:1.6;
+    }
+    .icon i{
+      font-size:30px;
+      /* margin-top:5px;
+      margin-right:5px; */
+      margin:5px 5px 0 0;/*top, right, bottom, left*/
+    }
+  </style>
+</head>
+<body>
+  <section id="container">
+    <article class="box">
+      <div class="pic">
+        <img src="https://picsum.photos/seed/picsum/160/160" alt="">
+      </div>
+      <div class="txt">
+        <h2>Segment Title</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum delectus consequuntur ratione, itaque error modi nesciunt aut provident veniam eveniet repellendus 
+        </p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <div class="pic">
+        <img src="https://picsum.photos/seed/picsum/160/160" alt="">
+      </div>
+      <div class="txt">
+        <h2>Segment Title</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum delectus consequuntur ratione, itaque error modi nesciunt aut provident veniam eveniet repellendus 
+        </p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <div class="pic">
+        <img src="https://picsum.photos/seed/picsum/160/160" alt="">
+      </div>
+      <div class="txt">
+        <h2>Segment Title</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum delectus consequuntur ratione, itaque error modi nesciunt aut provident veniam eveniet repellendus 
+        </p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </article>
+    <article class="box">
+      <div class="pic">
+        <img src="https://picsum.photos/seed/picsum/160/160" alt="">
+      </div>
+      <div class="txt">
+        <h2>Segment Title</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum delectus consequuntur ratione, itaque error modi nesciunt aut provident veniam eveniet repellendus 
+        </p>
+        <div class="icon">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-pinterest"></i></a>
+        </div>
+      </div>
+    </article>
+  </section>
+</body>
+</html>

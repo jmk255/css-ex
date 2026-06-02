@@ -27,18 +27,51 @@
       width:250px;
       height:240px;
       position:relative;/*pos:abs를 적용한 자식요소의 기준이됨*/
+      overflow:hidden;/*자식요소가 box영역 밖으로 넘어가면 가려짐*/
     }
     .box > .overlay{
       background-color:rgba(0,0,0,0.8);
       position:absolute;
       inset:0;/*position속성을 적용한 부모요소와 같은 크기로 같은 위치에 겹쳐놓음*/
       padding:30px 20px;
+    }
+    .box:nth-child(1) > .overlay{
       /*화면에서 가려줍니다*/
       opacity:0;
       visibility: hidden;
       /*변환 효과적용(애니메이션)*/
       transition: 0.3s;
     }
+    .box:nth-child(2) > .overlay{
+      /*요소의 높이값만큼 아래로 이동*/
+      transform:translateY(100%);
+      transition:0.5s;
+    }
+    /*2번째 box요소에 마우스를 올리면 원래 위치로 이동*/
+    .box:nth-child(2):hover > .overlay{
+      transform:translateY(0);
+    }
+    .box:nth-child(3) > .overlay{
+      /*요소의 높이값만큼 아래로 이동*/
+      transform:scale(0) rotate(-720deg);
+      transition:0.5s;
+    }
+    /*3번째 box요소에 마우스를 올리면 원래 위치로 이동*/
+    .box:nth-child(3):hover > .overlay{
+      transform:scale(1) rotate(0deg);
+    }
+    .box:nth-child(4) > .overlay{
+      /*요소의 높이값만큼 아래로 이동*/
+      transform:scale(10);
+      opacity:0;
+      transition:0.5s;
+    }
+    /*4번째 box요소에 마우스를 올리면 원래 위치로 이동*/
+    .box:nth-child(4):hover > .overlay{
+      transform:scale(1);
+      opacity:1;
+    }
+    
     .overlay > h2{
       font-size:24px;
       margin-bottom:10px;

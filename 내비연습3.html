@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내비연습3</title>
+  <script src="https://kit.fontawesome.com/632d3e2496.js" crossorigin="anonymous"></script>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    ul,li{list-style:none;}
+    a{text-decoration: none; color:inherit;}
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      font-size:16px;
+      line-height:1.4;
+      color:#333;
+    }
+    .container{
+      width:1200px;
+      margin:auto;
+      padding:0 40px;
+      display:flex;/*플렉스 적용*/
+      align-items: center;/*교차축 정렬*/
+    }
+
+    /*commons*/
+    nav > div{/*.top_nav, .bottom_nav를 같이 선택*/
+      min-width:1200px;
+      width:100%;
+      color:#fff;
+    }
+
+    /*top_nav*/
+    nav > .top_nav{      
+      background-color:#333;
+    }
+    .top_nav .container{
+      height:40px;
+      justify-content: flex-end;
+    }
+    .login{
+      display:flex;
+      gap:40px;
+    }
+    .login a{
+      font-size:14px;
+      color:#fff;
+    }
+    .login a:hover{
+      color:aqua;
+    }
+    
+    /*bottom_nav*/
+    nav > .bottom_nav{
+      background-color:orangered;
+    }
+    .bottom_nav .container{
+      height:80px;
+      justify-content: space-between;
+    }
+    .logo a{
+      font-size:40px;
+      color:#fff;
+    }
+    .gnb{
+      display:flex;
+      gap:45px;
+    }
+    .gnb a{
+      font-size:18px;
+      color:#fff;
+      font-weight: bold;
+    }
+    .gnb a:hover{
+      color:rebeccapurple;
+    }
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="top_nav">
+      <div class="container">
+        <ul class="login">
+          <li><a href="#">login</a></li>
+          <li><a href="#">join us</a></li>
+          <li><a href="#">member</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom_nav">
+      <div class="container">
+        <h1 class="logo"><a href="#">
+          <i class="fab fa-blogger"></i>
+        </a></h1>
+        <ul class="gnb">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">NEWS</a></li>
+          <li><a href="#">PORTFOLIO</a></li>
+          <li><a href="#">BOARD</a></li>
+          <li><a href="#">ALBUM</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
