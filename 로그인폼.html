@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인폼</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    a{text-decoration: none; color:inherit;}
+    body{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color:#666;
+      font-size:14px;
+    }
+    .login{
+      position:fixed;
+      /*브라우저 전체 영역 채우기*/
+      inset:0;
+      background-color:rgba(0,0,0,0.6);
+      /*login안쪽의 요소를 가운데 위치하기 위한 속성*/
+      display:none;/*화면에서 제거*/
+      justify-content: center;
+      align-items: center;
+    }
+    .login > .container{
+      width:500px;
+      background-color:#fff;
+      border-radius: 10px;
+    }
+    .login h1{
+      text-align: center;
+      padding-top:40px;
+      font-size:32px;
+    }
+    .login form{
+      width:100%;
+      padding:40px;
+    }
+    input[type=text],
+    input[type=password]{
+      width:100%;
+      padding:16px;
+      border:1px solid #999;
+      margin-bottom:10px;
+    }
+    /*placeholder의 스타일 변경*/
+    ::placeholder{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      font-size:14px;
+      color:#999;
+    }
+    form p{
+      line-height: 40px;
+    }
+    input[type=checkbox]{
+      margin-right:5px;
+      /*체크박스를 밑으로 1px이동하여 y축으로 글자의 가운데로 정렬*/
+      transform:translateY(1px);
+    }
+    input[type=submit]{
+      float:right;
+      height:40px;
+      padding:6px 16px;
+      font-weight: bold;
+      color:#fff;
+      background-color:#696;
+      border:none;
+      cursor:pointer;
+    }
+    .join{
+      width:100%;
+      border-top:1px solid #ccc;
+      text-align: center;
+      padding:20px 0;
+      color:#ccc;
+    }
+    .join > a{
+      color:#666;
+      margin:0 20px;
+    }
+  </style>
+</head>
+<body>
+  <!--로그인창-->
+  <div class="login">
+    <div class="container">
+      <h1>LOGIN</h1>
+      <form>
+        <input type="text" name="id" placeholder="아이디">
+        <input type="password" name="password" placeholder="비밀번호">
+        <p>
+          <input type="checkbox">로그인 유지
+          <input type="submit" value="로그인">
+        </p>
+      </form>
+      <div class="join">
+        <a href="#">아이디/비밀번호 찾기</a> |
+        <a href="#">회원 가입</a>
+      </div>
+    </div>
+  </div>
+  
+  <section id="bg">
+    <h1>로그인 입력창을 만들어 봅시다</h1>
+    <!--버튼을 클릭하면 loginOpen함수를 호출-->
+    <button class="login_btn" onclick="loginOpen()">로그인</button>
+  </section>
+  <!--자바스크립트-->
+  <script>
+    //loginOpen함수를 생성
+    function loginOpen(){
+      //.login요소의 display속성을 flex로 변경
+      document.querySelector(".login").style.display = "flex";
+    }
+  </script>
+</body>
+</html>

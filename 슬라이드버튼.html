@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>슬라이드버튼</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    a{text-decoration: none; color:inherit;}
+
+    .container{
+      outline:1px solid red;
+      width:1000px;
+      height:500px;
+      margin:auto;
+      position:relative;/*pos:abs를 적용한 자식요소의 기준이됨*/
+      overflow:hidden;/*container밖으로 넘어간 자식요소들을 가려줍니다*/
+    }
+    .sidenav a{
+      position:absolute;
+      width:130px;
+      padding:15px;
+      font-size:20px;
+      background-color:orange;
+      border-radius:0 5px 5px 0;/*왼상, 오상, 오하, 왼하*/
+      color:#fff;
+      font-weight: bold;
+      left:-100px;
+      transition:0.3s cubic-bezier(0,.91,1,.04);/*변환효과 적용*/
+    }
+    /*버튼에 마우스를 올리면 left값을 0으로 변경하여 section 영역안쪽으로 나타나게 합니다*/
+    .sidenav a:hover{
+      left:0;
+    }
+
+    #about{
+      top:20px;
+      background-color:#4caf50;
+    }
+    #blog{
+      top:85px;
+      background-color:#2196f3;
+    }
+    #projects{
+      top:150px;
+      background-color:#f44336;
+    }
+    #contact{
+      top:215px;
+      background-color:#555;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="sidenav">
+      <a href="#" id="about">About</a>
+      <a href="#" id="blog">Blog</a>
+      <a href="#" id="projects">Projects</a>
+      <a href="#" id="contact">Contact</a>
+    </div>
+  </section>
+</body>
+</html>

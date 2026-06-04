@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콘텐츠 정렬</title>
+  <style>
+    /*노말라이즈*/
+    *{margin:0; padding:0; box-sizing: border-box;}
+    ul,li{list-style:none;}
+
+    #content{
+      width:100%;
+      min-width:1200px;
+      background:url(image/bg.jpg) center/cover;
+    }
+    #content > .wrap{
+      width:1200px;
+      margin:auto;
+      padding:40px 10px;
+      display:flex;
+      justify-content: space-between;/*주축정렬*/
+      align-items: center;/*교차축 정렬*/
+    }
+    #content .container{
+      width:280px;
+    }
+    .box{
+      width:280px;
+      height:240px;
+      background-color:rgba(255,255,255,0.9);
+      padding:40px;
+      box-shadow:5px 5px 10px rgba(0,0,0,0.3);
+    }
+    .box:first-child{
+      margin-bottom:40px;
+    }
+    .box > li:first-child{
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom:50px;
+    }
+    .box > li:first-child > p{
+      font-size:14px;
+      color:#999;
+    }
+    .box > li:last-child > strong{
+      font-size:60px;
+      color:#5faad9;
+      margin-right:60px;
+    }
+    .box > li:last-child > b{
+      font-size:30px;
+      color:#666;
+    }
+
+    #content .title{
+      width:580px;
+      height:520px;
+      background:url(image/car.png);
+      padding-top:50px;
+    }
+    .title > h1{
+      text-align: center;
+      color:#5faad9;
+      font-size:60px;
+      line-height:1.1;
+      text-shadow:5px 5px 10px rgba(0,0,0,0.3);
+    }
+    .title > h1 > em{
+      font-style: normal;
+      font-weight: normal;
+      font-size:42px;
+    }
+  </style>
+</head>
+<body>
+  <section id="content">
+    <div class="wrap">
+      <div class="container">
+        <ul class="box">
+          <li>
+            <p>
+              아름답고 열매를 곳으로<br>
+              목숨이 봄바람이다
+            </p>
+            <img src="image/icon.png" alt="icon">
+          </li>
+          <li>
+            <strong>15</strong>
+            <b>건</b>
+          </li>
+        </ul>
+        <ul class="box">
+          <li>
+            <p>
+              아름답고 열매를 곳으로<br>
+              목숨이 봄바람이다
+            </p>
+            <img src="image/icon.png" alt="icon">
+          </li>
+          <li>
+            <strong>15</strong>
+            <b>건</b>
+          </li>
+        </ul>
+      </div>
+      <div class="title">
+        <h1>
+          <em>도로위의 잔혹사</em><br>
+          로드킬(ROAD KILL)
+        </h1>
+      </div>
+      <div class="container">
+        <ul class="box">
+          <li>
+            <p>
+              아름답고 열매를 곳으로<br>
+              목숨이 봄바람이다
+            </p>
+            <img src="image/icon.png" alt="icon">
+          </li>
+          <li>
+            <strong>15</strong>
+            <b>건</b>
+          </li>
+        </ul>
+        <ul class="box">
+          <li>
+            <p>
+              아름답고 열매를 곳으로<br>
+              목숨이 봄바람이다
+            </p>
+            <img src="image/icon.png" alt="icon">
+          </li>
+          <li>
+            <strong>15</strong>
+            <b>건</b>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
