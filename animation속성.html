@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animation속성</title>
+  <style>
+    div{
+      width:100px;
+      height:100px;
+      background-color:red;
+      position:relative;
+      margin-bottom:20px;
+    }
+
+    .box{
+      animation-name:colorChange;/*이름지정*/
+      animation-duration:4s;/*실행시간*/
+      animation-delay:2s;/*지연시간*/
+      animation-iteration-count:3;/*반복 횟수 (infinite:무한반복)*/
+      animation-direction:reverse;/*실행되는 방향(alternate : 똑바로 한번 반대로 한번 재생)*/
+      animation-timing-function:linear;/*타이밍 제어*/
+      /*축약형*/
+      animation:colorChange 4s linear 2s 3 alternate;
+    }
+
+    /*키프레임 생성*/
+    @keyframes colorChange{
+      from{background-color:red;} /*0% ~ 100%*/
+      to{background-color:yellow;}
+    }
+
+    .box1{
+      /* animation:example 5s linear 2s infinite alternate; */
+      animation:scale 4s;
+      /*
+      animation-fill-mode:;
+      forwards : 실행된 애니메이션의 마지막 키프레임에 의해 설정된 값을 유지
+      backwards : 애니메이션이 실행된 후 첫 번째 키프레임에 정의된 값을 적용(초기설정값으로 적용된다)
+      */
+      animation-fill-mode:forwards;
+    }
+    .box1:hover{
+      animation-play-state:paused;/*paused : 일시정지, running: 재생*/
+    }
+    @keyframes scale {
+      /* 0%{width:100px; height:100px;} */
+      100%{width:500px; height:500px;}
+    }
+    /* @keyframes example {
+      0%{background-color:red; left:0; top:0;}
+      25%{background-color:yellow; left:200px; top:0;}
+      50%{background-color:blue; left:200px; top:200px;}
+      75%{background-color:green; left:0px; top:200px;}
+      100%{background-color:red; left:0; top:0;}
+    } */
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="box1"></div>
+</body>
+</html>

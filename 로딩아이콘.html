@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로딩아이콘</title>
+  <style>
+    *{margin:0; padding:0;}
+    .loader{
+      width:120px;
+      height:120px;
+      border:16px solid #bbb;
+      border-top-color:#3498db;
+      border-radius: 50%;/*동그라미로 변경*/
+      animation: spin 2s linear infinite;
+    }
+    @keyframes spin {
+      100%{transform:rotate(360deg);}
+    }
+
+    /*회전하는 배경*/
+    .box{
+      outline:1px solid red;
+      width:400px;
+      height:300px;
+      position:relative;
+      background-color:beige;
+      overflow:hidden;/*.box밖으로 넘어가는 콘텐츠를 가려줌*/
+    }
+    .rotate{
+      width:500px;
+      height:500px;
+      background:linear-gradient(0deg, #dc2424 0%, #4a569d 100%);
+      position:absolute;/*pos:abs를 적용한 상태에서 가운데 정렬하는 방법*/
+      left:calc(50% - 250px);
+      top:calc(50% - 250px);
+      animation:rotate 4s linear infinite;
+    }
+
+    @keyframes rotate{
+      100%{transform:rotate(360deg);}
+    }
+
+    .logo{
+      width:100px;
+      height:100px;
+      position:absolute;
+      /*
+      calc() : +,-,*,/로 계산된 값을 적용할수있다
+      */
+      top:calc(50% - 50px); left:calc(50% - 50px);/*가운데 정렬*/
+      outline:1px solid red;
+    }
+    .logo img{
+      width:100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="loader"></div>
+  <div class="box">
+    <div class="rotate"></div>
+    <h1 class="logo"><img src="image/logo.png" alt="logo"></h1>
+  </div>
+</body>
+</html>
