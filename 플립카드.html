@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>플립카드</title>
+  <style>
+    .flip-card{
+      background-color:transparent;
+      width:300px;
+      height:300px;
+      border:1px solid #ddd;
+      /*깊이를 설정*/
+      perspective:1000px;
+    }
+    .flip-card-inner{
+      width:100%; height:100%;
+      text-align: center;
+      transform-style:preserve-3d;
+      /*
+      transform-style속성은 요소의 자식요소가 입체적인 3d 공간에 배치될지, 표면에 평평하게 묘사할 지를 결정합니다.
+      
+      *기본값은 flat(평면), preserve-3d를 지정하면 3d공간에 배치됩니다
+      */
+      position:relative;/*pos:abs를 적용한 자식요소의 기준이 됨*/
+      transition:transform 0.8s;/*transform속성이 변경되면 0.8초에 걸쳐서 서서히 변경됨*/
+    }
+
+    .flip-card-front, 
+    .flip-card-back{
+      position:absolute;
+      inset:0;
+      backface-visibility:hidden;/*요소가 180도로 뒤집어 졌을때 투명하게 표현*/
+    }
+    /*뒷면을 180도 회전하여 뒤집어줍니다*/
+    .flip-card-back{
+      background-color:dodgerblue;
+      color:#fff;
+      transform:rotateY(180deg);
+    }
+
+    /*카드위에 마우스를 올리면 카드가 뒤집혀짐*/
+    .flip-card:hover .flip-card-inner{
+      transform:rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <!--카드의 앞면-->
+      <div class="flip-card-front">
+        <img src="image/user.jpg" alt="" width="300" height="300">
+      </div>
+      <!--카드의 뒷면-->
+      <div class="flip-card-back">
+        <h1>John Doe</h1>
+        <p>Architect &amp; Engineer</p>
+        <p>We love that guy</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

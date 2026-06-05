@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가로로 흐르는 글자</title>
+  <style>
+    /*외부 css링크*/
+    @import url(css/reset.css);
+
+    .flow_banner{
+      width:100%;
+      background:#000;
+      position:relative;
+      overflow:hidden;/*flow_banner바깥쪽으로 넘어가는 요소를 가려줌*/
+      transform:rotate(15deg) translateY(100px);
+    }
+    .flow_banner .flow_inner{
+      width:200%;
+      display:flex;
+    }
+    .flow_banner .list{
+      width:50%;
+      display:flex;
+      padding:20px 0;
+      text-align: center;
+    }
+
+    .flow_banner .list li{
+      flex:1;/*flex item의 크기를 같은 비율로 설정(1:1:1...)*/
+      font-size:18px;
+      color:#fff;
+      white-space:nowrap;/*글자가 줄바꿈 되지 않도록 설정*/
+      transition:0.3s;/*변환효과*/
+      cursor:default;
+    }
+    /*글자에 마우스를 올리면 글자가 커지는 효과*/
+    .flow_banner .list li:hover{
+      transform:scale(1.2);
+    }
+    /*애니메이션*/
+    .flow_banner .list:nth-child(1){
+      animation:flowRolling1 40s linear infinite;
+    }
+    .flow_banner .list:nth-child(2){
+      animation:flowRolling2 40s linear infinite;
+    }
+    
+    /*flowbanner에 마우스를 올리면 애니메이션이 일시정지 됩니다*/
+    .flow_banner:hover .list{
+      animation-play-state:paused;
+    }
+    @keyframes flowRolling1 {
+      0%{transform:translateX(0);}
+      50%{transform:translateX(-100%);}
+      50.0001%{transform:translateX(100%);}
+      100%{transform:translateX(0);}
+    }
+    @keyframes flowRolling2 {
+      0%{transform:translateX(0);}
+      100%{transform:translateX(-200%);}
+    }
+  </style>
+</head>
+<body>
+  <div class="flow_banner">
+    <div class="flow_inner">
+      <ul class="list">
+        <li>TEXT1</li>
+        <li>TEXT2</li>
+        <li>TEXT3</li>
+        <li>TEXT4</li>
+        <li>TEXT5</li>
+      </ul>
+      <ul class="list">
+        <li>TEXT1</li>
+        <li>TEXT2</li>
+        <li>TEXT3</li>
+        <li>TEXT4</li>
+        <li>TEXT5</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
